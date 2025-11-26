@@ -1,0 +1,149 @@
+$date
+	Wed Nov 26 05:13:34 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module reg_file_tb $end
+$var wire 32 ! read_data1 [31:0] $end
+$var wire 32 " read_data2 [31:0] $end
+$var reg 5 # Rd [4:0] $end
+$var reg 1 $ RegWrite $end
+$var reg 5 % Rs1 [4:0] $end
+$var reg 5 & Rs2 [4:0] $end
+$var reg 32 ' Write_data [31:0] $end
+$var reg 1 ( clk $end
+$var reg 1 ) rst $end
+$scope module dut $end
+$var wire 5 * Rd [4:0] $end
+$var wire 1 + RegWrite $end
+$var wire 5 , Rs1 [4:0] $end
+$var wire 5 - Rs2 [4:0] $end
+$var wire 32 . Write_data [31:0] $end
+$var wire 1 / clk $end
+$var wire 32 0 read_data1 [31:0] $end
+$var wire 32 1 read_data2 [31:0] $end
+$var wire 1 2 rst $end
+$var integer 32 3 i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 3
+12
+b0 1
+b0 0
+0/
+b0 .
+b0 -
+b0 ,
+0+
+b0 *
+1)
+0(
+b0 '
+b0 &
+b0 %
+0$
+b0 #
+b0 "
+b0 !
+$end
+#5
+b100000 3
+1(
+1/
+#10
+0(
+0/
+#15
+0)
+02
+b100000 3
+1(
+1/
+#16
+b101 %
+b101 ,
+#20
+0(
+0/
+#25
+b11011110101011011011111011101111 '
+b11011110101011011011111011101111 .
+b101 #
+b101 *
+1$
+1+
+1(
+1/
+#30
+0(
+0/
+#35
+b11011110101011011011111011101111 !
+b11011110101011011011111011101111 0
+0$
+0+
+1(
+1/
+#40
+0(
+0/
+#45
+b10010001101000101011001111000 '
+b10010001101000101011001111000 .
+b1010 #
+b1010 *
+1$
+1+
+1(
+1/
+#50
+0(
+0/
+#55
+0$
+0+
+1(
+1/
+#56
+b10010001101000101011001111000 !
+b10010001101000101011001111000 0
+b1010 %
+b1010 ,
+#60
+0(
+0/
+#65
+b11111111111111111111111111111111 '
+b11111111111111111111111111111111 .
+b0 #
+b0 *
+1$
+1+
+1(
+1/
+#70
+0(
+0/
+#75
+0$
+0+
+b0 !
+b0 0
+b0 %
+b0 ,
+1(
+1/
+#80
+0(
+0/
+#85
+1(
+1/
+#86

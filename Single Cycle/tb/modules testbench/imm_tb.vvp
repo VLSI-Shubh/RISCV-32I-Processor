@@ -1,0 +1,441 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0127C590 .scope module, "imm_tb" "imm_tb" 2 4;
+ .timescale -9 -9;
+v01273450_0 .net "imm_out", 31 0, v0127DA10_0; 1 drivers
+v012734A8_0 .var "instruction", 31 0;
+S_0127D2D8 .scope task, "run_case" "run_case" 2 14, 2 14, S_0127C590;
+ .timescale -9 -9;
+v012B2940_0 .var "exp_imm", 31 0;
+v012733F8_0 .var "instr_in", 31 0;
+TD_imm_tb.run_case ;
+    %load/v 8, v012733F8_0, 32;
+    %set/v v012734A8_0, 8, 32;
+    %delay 1, 0;
+    %load/v 8, v01273450_0, 32;
+    %load/v 40, v012B2940_0, 32;
+    %cmp/u 8, 40, 32;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call 2 21 "$display", "PASS: instr=%h imm=%h", v012733F8_0, v01273450_0;
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call 2 23 "$display", "FAIL: instr=%h imm=%h exp=%h", v012733F8_0, v01273450_0, v012B2940_0;
+T_0.1 ;
+    %end;
+S_0127C508 .scope module, "dut" "imm" 2 9, 3 1, S_0127C590;
+ .timescale -9 -9;
+v0127DA10_0 .var "imm_out", 31 0;
+v012B2890_0 .net "instruction", 31 0, v012734A8_0; 1 drivers
+v012B28E8_0 .net "opcode", 6 0, L_0127DF60; 1 drivers
+E_01278E90 .event edge, v012B28E8_0, v012B2890_0;
+L_0127DF60 .part v012734A8_0, 0, 7;
+    .scope S_0127C508;
+T_1 ;
+    %wait E_01278E90;
+    %load/v 8, v012B28E8_0, 7;
+    %cmpi/u 8, 19, 7;
+    %jmp/1 T_1.0, 6;
+    %cmpi/u 8, 3, 7;
+    %jmp/1 T_1.1, 6;
+    %cmpi/u 8, 103, 7;
+    %jmp/1 T_1.2, 6;
+    %cmpi/u 8, 35, 7;
+    %jmp/1 T_1.3, 6;
+    %cmpi/u 8, 99, 7;
+    %jmp/1 T_1.4, 6;
+    %cmpi/u 8, 55, 7;
+    %jmp/1 T_1.5, 6;
+    %cmpi/u 8, 23, 7;
+    %jmp/1 T_1.6, 6;
+    %cmpi/u 8, 111, 7;
+    %jmp/1 T_1.7, 6;
+    %set/v v0127DA10_0, 0, 32;
+    %jmp T_1.9;
+T_1.0 ;
+    %ix/load 1, 20, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.10, 4;
+    %load/x1p 40, v012B2890_0, 12;
+    %jmp T_1.11;
+T_1.10 ;
+    %mov 40, 2, 12;
+T_1.11 ;
+    %mov 8, 40, 12; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.12, 4;
+    %load/x1p 60, v012B2890_0, 1;
+    %jmp T_1.13;
+T_1.12 ;
+    %mov 60, 2, 1;
+T_1.13 ;
+    %mov 40, 60, 1; Move signal select into place
+    %mov 59, 40, 1; Repetition 20
+    %mov 58, 40, 1; Repetition 19
+    %mov 57, 40, 1; Repetition 18
+    %mov 56, 40, 1; Repetition 17
+    %mov 55, 40, 1; Repetition 16
+    %mov 54, 40, 1; Repetition 15
+    %mov 53, 40, 1; Repetition 14
+    %mov 52, 40, 1; Repetition 13
+    %mov 51, 40, 1; Repetition 12
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 20, 40, 20;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.1 ;
+    %ix/load 1, 20, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.14, 4;
+    %load/x1p 40, v012B2890_0, 12;
+    %jmp T_1.15;
+T_1.14 ;
+    %mov 40, 2, 12;
+T_1.15 ;
+    %mov 8, 40, 12; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.16, 4;
+    %load/x1p 60, v012B2890_0, 1;
+    %jmp T_1.17;
+T_1.16 ;
+    %mov 60, 2, 1;
+T_1.17 ;
+    %mov 40, 60, 1; Move signal select into place
+    %mov 59, 40, 1; Repetition 20
+    %mov 58, 40, 1; Repetition 19
+    %mov 57, 40, 1; Repetition 18
+    %mov 56, 40, 1; Repetition 17
+    %mov 55, 40, 1; Repetition 16
+    %mov 54, 40, 1; Repetition 15
+    %mov 53, 40, 1; Repetition 14
+    %mov 52, 40, 1; Repetition 13
+    %mov 51, 40, 1; Repetition 12
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 20, 40, 20;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.2 ;
+    %ix/load 1, 20, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.18, 4;
+    %load/x1p 40, v012B2890_0, 12;
+    %jmp T_1.19;
+T_1.18 ;
+    %mov 40, 2, 12;
+T_1.19 ;
+    %mov 8, 40, 12; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.20, 4;
+    %load/x1p 60, v012B2890_0, 1;
+    %jmp T_1.21;
+T_1.20 ;
+    %mov 60, 2, 1;
+T_1.21 ;
+    %mov 40, 60, 1; Move signal select into place
+    %mov 59, 40, 1; Repetition 20
+    %mov 58, 40, 1; Repetition 19
+    %mov 57, 40, 1; Repetition 18
+    %mov 56, 40, 1; Repetition 17
+    %mov 55, 40, 1; Repetition 16
+    %mov 54, 40, 1; Repetition 15
+    %mov 53, 40, 1; Repetition 14
+    %mov 52, 40, 1; Repetition 13
+    %mov 51, 40, 1; Repetition 12
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 20, 40, 20;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.3 ;
+    %ix/load 1, 7, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.22, 4;
+    %load/x1p 40, v012B2890_0, 5;
+    %jmp T_1.23;
+T_1.22 ;
+    %mov 40, 2, 5;
+T_1.23 ;
+    %mov 8, 40, 5; Move signal select into place
+    %ix/load 1, 25, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.24, 4;
+    %load/x1p 40, v012B2890_0, 7;
+    %jmp T_1.25;
+T_1.24 ;
+    %mov 40, 2, 7;
+T_1.25 ;
+    %mov 13, 40, 7; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.26, 4;
+    %load/x1p 60, v012B2890_0, 1;
+    %jmp T_1.27;
+T_1.26 ;
+    %mov 60, 2, 1;
+T_1.27 ;
+    %mov 40, 60, 1; Move signal select into place
+    %mov 59, 40, 1; Repetition 20
+    %mov 58, 40, 1; Repetition 19
+    %mov 57, 40, 1; Repetition 18
+    %mov 56, 40, 1; Repetition 17
+    %mov 55, 40, 1; Repetition 16
+    %mov 54, 40, 1; Repetition 15
+    %mov 53, 40, 1; Repetition 14
+    %mov 52, 40, 1; Repetition 13
+    %mov 51, 40, 1; Repetition 12
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 20, 40, 20;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.4 ;
+    %mov 8, 0, 1;
+    %ix/load 1, 8, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.28, 4;
+    %load/x1p 40, v012B2890_0, 4;
+    %jmp T_1.29;
+T_1.28 ;
+    %mov 40, 2, 4;
+T_1.29 ;
+    %mov 9, 40, 4; Move signal select into place
+    %ix/load 1, 25, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.30, 4;
+    %load/x1p 40, v012B2890_0, 6;
+    %jmp T_1.31;
+T_1.30 ;
+    %mov 40, 2, 6;
+T_1.31 ;
+    %mov 13, 40, 6; Move signal select into place
+    %ix/load 1, 7, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.32, 4;
+    %load/x1p 40, v012B2890_0, 1;
+    %jmp T_1.33;
+T_1.32 ;
+    %mov 40, 2, 1;
+T_1.33 ;
+    %mov 19, 40, 1; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.34, 4;
+    %load/x1p 40, v012B2890_0, 1;
+    %jmp T_1.35;
+T_1.34 ;
+    %mov 40, 2, 1;
+T_1.35 ;
+    %mov 20, 40, 1; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.36, 4;
+    %load/x1p 59, v012B2890_0, 1;
+    %jmp T_1.37;
+T_1.36 ;
+    %mov 59, 2, 1;
+T_1.37 ;
+    %mov 40, 59, 1; Move signal select into place
+    %mov 58, 40, 1; Repetition 19
+    %mov 57, 40, 1; Repetition 18
+    %mov 56, 40, 1; Repetition 17
+    %mov 55, 40, 1; Repetition 16
+    %mov 54, 40, 1; Repetition 15
+    %mov 53, 40, 1; Repetition 14
+    %mov 52, 40, 1; Repetition 13
+    %mov 51, 40, 1; Repetition 12
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 21, 40, 19;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.5 ;
+    %mov 8, 0, 12;
+    %ix/load 1, 12, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.38, 4;
+    %load/x1p 40, v012B2890_0, 20;
+    %jmp T_1.39;
+T_1.38 ;
+    %mov 40, 2, 20;
+T_1.39 ;
+    %mov 20, 40, 20; Move signal select into place
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.6 ;
+    %mov 8, 0, 12;
+    %ix/load 1, 12, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.40, 4;
+    %load/x1p 40, v012B2890_0, 20;
+    %jmp T_1.41;
+T_1.40 ;
+    %mov 40, 2, 20;
+T_1.41 ;
+    %mov 20, 40, 20; Move signal select into place
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.7 ;
+    %mov 8, 0, 1;
+    %ix/load 1, 21, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.42, 4;
+    %load/x1p 40, v012B2890_0, 10;
+    %jmp T_1.43;
+T_1.42 ;
+    %mov 40, 2, 10;
+T_1.43 ;
+    %mov 9, 40, 10; Move signal select into place
+    %ix/load 1, 20, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.44, 4;
+    %load/x1p 40, v012B2890_0, 1;
+    %jmp T_1.45;
+T_1.44 ;
+    %mov 40, 2, 1;
+T_1.45 ;
+    %mov 19, 40, 1; Move signal select into place
+    %ix/load 1, 12, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.46, 4;
+    %load/x1p 40, v012B2890_0, 8;
+    %jmp T_1.47;
+T_1.46 ;
+    %mov 40, 2, 8;
+T_1.47 ;
+    %mov 20, 40, 8; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.48, 4;
+    %load/x1p 40, v012B2890_0, 1;
+    %jmp T_1.49;
+T_1.48 ;
+    %mov 40, 2, 1;
+T_1.49 ;
+    %mov 28, 40, 1; Move signal select into place
+    %ix/load 1, 31, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.50, 4;
+    %load/x1p 51, v012B2890_0, 1;
+    %jmp T_1.51;
+T_1.50 ;
+    %mov 51, 2, 1;
+T_1.51 ;
+    %mov 40, 51, 1; Move signal select into place
+    %mov 50, 40, 1; Repetition 11
+    %mov 49, 40, 1; Repetition 10
+    %mov 48, 40, 1; Repetition 9
+    %mov 47, 40, 1; Repetition 8
+    %mov 46, 40, 1; Repetition 7
+    %mov 45, 40, 1; Repetition 6
+    %mov 44, 40, 1; Repetition 5
+    %mov 43, 40, 1; Repetition 4
+    %mov 42, 40, 1; Repetition 3
+    %mov 41, 40, 1; Repetition 2
+    %mov 29, 40, 11;
+    %set/v v0127DA10_0, 8, 32;
+    %jmp T_1.9;
+T_1.9 ;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_0127C590;
+T_2 ;
+    %vpi_call 2 29 "$dumpfile", "imm_waveform.vcd";
+    %vpi_call 2 30 "$dumpvars", 1'sb0, S_0127C590;
+    %movi 8, 2146468115, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 2047, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %movi 8, 4286652803, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 4294967288, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %movi 8, 4062217507, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 4294967082, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %movi 8, 4263546595, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 4294967292, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %movi 8, 2882396343, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 2882396160, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %movi 8, 1468010735, 32;
+    %set/v v012733F8_0, 8, 32;
+    %movi 8, 5496, 32;
+    %set/v v012B2940_0, 8, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %set/v v012733F8_0, 0, 32;
+    %set/v v012B2940_0, 0, 32;
+    %fork TD_imm_tb.run_case, S_0127D2D8;
+    %join;
+    %delay 5, 0;
+    %vpi_call 2 57 "$finish";
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "imm_tb.v";
+    "./../../src/imm.v";
