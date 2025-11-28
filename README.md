@@ -17,7 +17,7 @@ Development is ongoing to enhance the processor's versatility to handle more com
   └── testbench/
         └── tb1
         └── tb2
-
+```
 
 The testbench section is actively evolving, as it is used for current testing purposes.
 
