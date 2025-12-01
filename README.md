@@ -15,10 +15,10 @@ The main branch contains fully functional and tested source files along with the
 ```
 RISC-V-32I-Processor/
 ├── SingleCycle/
-│ ├── src/
+│ ├── rtl/
 │ └── testbench/
 ├── Pipeline/
-│ ├── src/
+│ ├── rtl/
 │ └── testbench/
 └── README.md
 
