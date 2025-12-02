@@ -60,9 +60,28 @@ module core_sc (
         .b(imm_out),
         .sum(pc_branch)
     );
-
-    // Branch decision
+    
+    /*
+    // Branch decision (old)
     wire take_branch = Branch & zero;
+    */
+    // ------------------------
+    // Branch block (updated)
+    // ------------------------
+    /*
+    wire [31:0] instr;         // from inst_mem
+    wire [31:0] rs1_data;      // from regfile
+    wire [31:0] rs2_data;      // from regfile
+    wire        Branch;        // from control
+    wire        take_branch;
+    */
+    branch_unit u_branch (
+        .Branch     (Branch),
+        .funct3     (instr[14:12]),
+        .rs1_data   (rs1_data),
+        .rs2_data   (rs2_data),
+        .take_branch(take_branch)
+    );
 
     // Next PC MUX: sequential or branch target
     mux #(.width(32)) u_pc_mux (
@@ -153,6 +172,12 @@ module core_sc (
         .sel(ALUSrc),
         .out(alu_b_in)
     );
+    
+
+// PC mux
+assign pc_next = take_branch ? pc_branch : pc_plus4;
+
+
 
     // ------------------------
     // ALU
