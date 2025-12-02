@@ -1,32 +1,26 @@
-<p align="left">
-  <img src="https://img.shields.io/badge/Single--Cycle%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/Pipelined%20Execution-In%20Progress-yellow" />
-</p>
-
 # RISCV-32I-Processor
 
-Welcome to the main branch of the RISCV-32I-Processor project. This branch contains the latest, stable, and working versions of the processor implementations.
+This branch focuses on the ongoing development of the 5 stage pipelined execution. All the latest, stable files can be found in the main branch; this branch is dedicated specifically to pipelined execution.
 
-## Project Overview
+**Important:**  
+Please do **not** fork or clone this branch, as it is under continuous development and the modules may not perform as expected.
 
-This repository implements the RISC-V 32I subset processor core in Verilog. It includes two main execution designs:
+The current version of this setup is functional and capable of executing both individual instructions and simple, straightforward tasks.
 
-- **Single Cycle:** A simple single cycle implementation of the RISCV 32I core.
-- **Pipeline:** A more advanced pipelined implementation.
+Development is ongoing to enhance the processor's versatility to handle more complex tasks.
 
-The main branch contains fully functional and tested source files along with their corresponding testbenches. It serves as the central, most up-to-date snapshot of the project.
+## Directory Structure (for this branch)
 
-## Current Status
+```
+├── pipeline execution/
+│ ├── src/
+  └── testbench/
+        └── tb1
+        └── tb2
+```
 
-- Single Cycle core is stable and capable of running basic instructions and simple programs.
-- Pipelined core is under active development and testing.
-- Test benches cover basic instruction tests and are being expanded for more complex scenarios.
+The testbench section is actively evolving, as it is used for current testing purposes.
 
-## Usage
-
-You can explore and use the implementations in the Single Cycle and Pipeline folders. Each design has its own source code and testbench setup to allow focused development and testing.
-
-Contributions and feedback are welcome to improve both variants and extend functionality.
-
-## License
-Open for educational and personal use under the [MIT License](License.txt)
+- **tb1**: The first test bench, which executes random basic instructions of each type and provides all the required expected outputs.
+- **tb2**: Intended to perform a simple factorial calculation. Since there is no MUL block yet, multiplication will be implemented using Euclidean algorithm-style repeated addition.
+- Additional test benches are planned to cover more complex tasks as development progresses.

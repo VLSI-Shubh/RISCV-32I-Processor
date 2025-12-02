@@ -9,6 +9,7 @@
 `include "../../src/mux.v"
 `include "../../src/pc.v"
 `include "../../src/reg_file.v"
+`include "../../src/branch_unit.v"
 
 
 module core_sc_tb;
