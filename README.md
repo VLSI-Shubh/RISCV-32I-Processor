@@ -1,3 +1,8 @@
+<p align="left">
+  <img src="https://img.shields.io/badge/Single--Cycle%20Execution-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/Pipelined%20Execution-In%20Progress-yellow" />
+</p>
+
 # RISCV-32I-Processor
 
 Welcome to the main branch of the RISCV-32I-Processor project. This branch contains the latest, stable, and working versions of the processor implementations.
