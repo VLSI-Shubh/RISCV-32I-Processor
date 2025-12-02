@@ -58,8 +58,8 @@ There are two main core-level testbenches:
 
 ## Project Structure
 - `src/` - Source code for CPU implementation
-- `tests/` - Test cases for various instructions
-- `docs/` - Documentation related to single cycle execution design (Not there yet, will add all the document I referred in order to do the project)
+- `tb/` - Test cases for various instructions
+
 
 ## How to Build and Run
 1. Clone the repository
