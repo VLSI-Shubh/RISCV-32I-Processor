@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/Single--Cycle%20Execution-Completed-brightgreen" />
   <img src="https://img.shields.io/badge/Pipelined%20Execution-Completed-brightgreen" />
   <img src="https://img.shields.io/badge/Synthesis-In%20Progress-yellow" />
-  <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending-grey" />
+  <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending- orange" />
 </p>
 
 # RISCV-32I-Processor
