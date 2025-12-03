@@ -12,15 +12,19 @@ Development is ongoing to enhance the processor's versatility to handle more com
 ## Directory Structure (for this branch)
 
 ```
-├── pipeline execution/
-│ ├── src/
-  └── testbench/
-        └── tb1
-        └── tb2
+├── pipeline_execution/
+│   ├── src/
+│   │   ├── modules/
+│   │   └── stages/
+│   ├── testbench/
+│   │   ├── tb1/
+│   │   └── tb2/
+│
+
 ```
 
 The testbench section is actively evolving, as it is used for current testing purposes.
 
 - **tb1**: The first test bench, which executes random basic instructions of each type and provides all the required expected outputs.
-- **tb2**: Intended to perform a simple factorial calculation. Since there is no MUL block yet, multiplication will be implemented using Euclidean algorithm-style repeated addition.
+- **tb2**: ~~Intended to perform a simple factorial calculation. Since there is no MUL block yet, multiplication will be implemented using Euclidean algorithm-styl repeated addition.~~
 - Additional test benches are planned to cover more complex tasks as development progresses.
