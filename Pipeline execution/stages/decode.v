@@ -79,10 +79,10 @@ module decode (
         .clk        (clk),
         .rst        (rst),
         .RegWrite   (RegWrite_wb),
-        .read_reg1  (rs1),
-        .read_reg2  (rs2),
-        .write_reg  (rd_wb),
-        .write_data (wb_data_wb),
+        .Rs1  (rs1),
+        .Rs2  (rs2),
+        .Rd  (rd_wb),
+        .Write_data (wb_data_wb),
         .read_data1 (rs1_data),
         .read_data2 (rs2_data)
     );
@@ -93,8 +93,7 @@ module decode (
     wire [31:0] imm;
 
     imm u_imm (
-        .instr   (instr_in),
-        .opcode  (opcode),
+        .instruction   (instr_in),
         .imm_out (imm)
     );
 
