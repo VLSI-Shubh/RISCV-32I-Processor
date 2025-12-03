@@ -28,14 +28,14 @@ To design and implement a five-stage pipelined CPU architecture capable of execu
 
 ## Directory Structure
 ```
-
-pipeline_execute/
+PipelineExecution/
 ├── core/
 │ └── core_pip.v # Top-level pipelined RV32I core
 ├── stages/ # Individual pipeline stage modules (IF, ID, EX, MEM, WB)
-└── tb/
-    ├── stages_tb/ # Testbenches for individual stage modules
-    └── tb_1/ # First integrated testbench for the pipelined core
+├── tb/
+│ ├── stages_tb/ # Testbenches for individual stage modules
+│ └── tb_1/ # First integrated testbench for the pipelined core
+└── synth/ # Folder for synthesis using Yosys with Yosys script and synthesis SVG output
 
 ```
 ## Future Work
