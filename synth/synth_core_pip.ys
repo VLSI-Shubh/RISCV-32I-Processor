@@ -1,0 +1,40 @@
+# =====================================================
+# Yosys synthesis script for core_pip (RV32I pipeline)
+# Run from: project_root/synth/
+# =====================================================
+
+# Read RTL (note the ../src paths)
+read_verilog ../src/core_pip.v
+read_verilog ../src/modules/adder.v
+read_verilog ../src/modules/alu_control.v
+read_verilog ../src/modules/alu.v
+read_verilog ../src/modules/control.v
+read_verilog ../src/modules/imm.v
+read_verilog ../src/modules/inst_mem.v
+read_verilog ../src/modules/mux.v
+read_verilog ../src/modules/pc.v
+read_verilog ../src/modules/reg_file.v
+read_verilog ../src/modules/branch_unit.v
+
+read_verilog ../src/stages/fetch.v
+read_verilog ../src/stages/decode.v
+read_verilog ../src/stages/execute.v
+read_verilog ../src/stages/memory.v
+read_verilog ../src/stages/if_id_reg.v
+read_verilog ../src/stages/id_ex_reg.v
+read_verilog ../src/stages/ex_mem_reg.v
+read_verilog ../src/stages/mem_wb_reg.v
+read_verilog ../src/stages/hazard_unit.v
+read_verilog ../src/stages/forwarding_unit.v
+
+# Build hierarchy
+hierarchy -check -top core_pip
+
+# Generic synthesis passes
+proc; opt; fsm; opt; memory; opt
+
+# Run synth
+synth -top core_pip
+
+# Netlist goes inside synth/
+write_verilog -noattr core_pip_synth.v
