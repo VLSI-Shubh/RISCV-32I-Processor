@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "../../src/inst_mem.v"   // <-- update path to your inst_mem.v
+`include "../../src/inst_mem.v"   
 
 module inst_mem_tb;
 
