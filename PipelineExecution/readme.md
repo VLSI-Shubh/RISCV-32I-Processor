@@ -44,16 +44,16 @@ PipelineExecution/
 │   ├── hazard_unit.v               # Load–use hazard detection
 │   └── forwarding_unit.v           # Forwarding/bypass logic
 │
-├── tb/
-│   ├── stages_tb/                  # Testbenches for individual pipeline stages/hazard/forwarding
-│   └── tb_1/                       # Integrated testbench for full pipelined core
-│
 ├── synth/
 │   ├── synth_core_pip.ys           # Synthesis script (run from inside synth/)
 │   ├── show_core_pip.ys            # Schematic (SVG) generation script
 │   ├── core_pip_synth.v            # Synthesized netlist (generated)
 │   ├── core_pip.svg                # Block-level schematic of the pipelined core (generated)
 │   └── synth_core_pip.log          # Synthesis log (generated)
+│
+├── tb/
+│   ├── stages_tb/                  # Testbenches for individual pipeline stages/hazard/forwarding
+│   └── tb_1/                       # Integrated testbench for full pipelined core
 │
 └── NOTE Shared Modules             # external modules reused from Single-Cycle design.
 
