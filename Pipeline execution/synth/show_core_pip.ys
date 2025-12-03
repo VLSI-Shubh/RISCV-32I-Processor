@@ -1,0 +1,38 @@
+# =====================================================
+# Yosys show script for core_pip (block-level schematic)
+# Run from: project_root/synth/
+# =====================================================
+
+
+# Read RTL
+read_verilog ../core/core_pip.v
+read_verilog '../../Single Cycle/src/adder.v'
+read_verilog '../../Single Cycle/src/alu_control.v'
+read_verilog '../../Single Cycle/src/alu.v'
+read_verilog '../../Single Cycle/src/control.v'
+read_verilog '../../Single Cycle/src/imm.v'
+read_verilog '../../Single Cycle/src/inst_mem.v'
+read_verilog '../../Single Cycle/src/mux.v'
+read_verilog '../../Single Cycle/src/pc.v'
+read_verilog '../../Single Cycle/src/reg_file.v'
+read_verilog '../../Single Cycle/src/branch_unit.v'
+
+
+read_verilog ../stages/fetch.v
+read_verilog ../stages/decode.v
+read_verilog ../stages/execute.v
+read_verilog ../stages/memory.v
+read_verilog ../stages/if_id_reg.v
+read_verilog ../stages/id_ex_reg.v
+read_verilog ../stages/ex_mem_reg.v
+read_verilog ../stages/mem_wb_reg.v
+read_verilog ../stages/hazard_unit.v
+read_verilog ../stages/forwarding_unit.v
+
+# Build hierarchy but do not flatten
+hierarchy -check -top core_pip
+
+proc; opt; fsm; opt; memory; opt
+
+# Only show ONE module: core_pip
+show -format svg -prefix core_pip core_pip
