@@ -6,16 +6,16 @@
 
 # Read RTL
 read_verilog ../core/core_pip.v
-read_verilog '../../Single Cycle/src/adder.v'
-read_verilog '../../Single Cycle/src/alu_control.v'
-read_verilog '../../Single Cycle/src/alu.v'
-read_verilog '../../Single Cycle/src/control.v'
-read_verilog '../../Single Cycle/src/imm.v'
-read_verilog '../../Single Cycle/src/inst_mem.v'
-read_verilog '../../Single Cycle/src/mux.v'
-read_verilog '../../Single Cycle/src/pc.v'
-read_verilog '../../Single Cycle/src/reg_file.v'
-read_verilog '../../Single Cycle/src/branch_unit.v'
+read_verilog ../../SingleCycle/src/adder.v
+read_verilog ../../SingleCycle/src/alu_control.v
+read_verilog ../../SingleCycle/src/alu.v
+read_verilog ../../SingleCycle/src/control.v
+read_verilog ../../SingleCycle/src/imm.v
+read_verilog ../../SingleCycle/src/inst_mem.v
+read_verilog ../../SingleCycle/src/mux.v
+read_verilog ../../SingleCycle/src/pc.v
+read_verilog ../../SingleCycle/src/reg_file.v
+read_verilog ../../SingleCycle/src/branch_unit.v
 
 
 read_verilog ../stages/fetch.v
