@@ -1,33 +1,47 @@
 # Pipelined Execution Project
 
 ## Project Status
-The project has moved beyond the planning phase. The modules for the fetch, decode, execute, memory, and write back stages have been written and are under active refinement. Work is currently in progress for the hazard detection unit and the forwarding unit. These components are essential for resolving data hazards and ensuring proper instruction flow through the pipeline.
+The project features a fully operational five-stage pipelined RV32I RISC-V core, designed in Verilog, which incorporates both hazard detection and forwarding units to efficiently manage data hazards and maintain correct instruction execution.
 
 ## Project Goal
-To design and implement a five stage pipelined CPU architecture capable of executing the RV32I instruction set.
+To design and implement a five-stage pipelined CPU architecture capable of executing the RV32I instruction set.
 
 ## Implemented Components
-- Instruction fetch stage
-- Instruction decode stage
-- Execute stage
-- Memory access stage
-- Write back stage
-- Pipeline registers between stages
-
-## Work in Progress
-- Hazard detection unit
-- Forwarding unit
+- Instruction fetch stage  
+- Instruction decode stage  
+- Execute stage  
+- Memory access stage  
+- Write back stage  
+- Pipeline registers between stages  
+- Hazard detection unit  
+- Forwarding unit  
 
 ## Planned Features
-- Complete hazard detection and data forwarding logic
-- Static branch prediction for smoother pipeline flow
-- Full datapath and control signal validation across all pipeline stages
+- Refinement of hazard detection and data forwarding logic for more complex programs  
+- Static branch prediction for smoother pipeline flow  
+- Full datapath and control signal validation across all pipeline stages  
 
 ## Next Steps
-- Finish the hazard detection and forwarding units
-- Integrate branch decision logic and update the control unit
-- Perform module level and system level verification using sample RISC V programs
-- Analyze performance, stalls, and forwarding behavior using waveform based debugging
+- Extend and refine the verification environment using additional RISC‑V programs  
+- Analyze stalls, forwarding behavior, and branch handling using waveform-based debugging  
+- Improve documentation and add more example testcases  
+
+## Directory Structure
+```
+
+pipeline_execute/
+├── core/
+│ └── core_pip.v # Top-level pipelined RV32I core
+├── stages/ # Individual pipeline stage modules (IF, ID, EX, MEM, WB)
+└── tb/
+    ├── stages_tb/ # Testbenches for individual stage modules
+    └── tb_1/ # First integrated testbench for the pipelined core
+
+```
+## Future Work
+- Implement branch detection and prediction module to resolve control hazards and reduce pipeline stalls
+- Perform comprehensive RISC-V instruction set verification using standard test suites
+- Integrate with a basic software toolchain to compile and execute simple C programs on the pipelined core
 
 ## Contribution
-Suggestions for design improvements or verification strategies are welcome.
+Suggestions for design improvements, verification strategies, or additional test programs are welcome.
