@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-`include "../../stages/core_pip.v"
+`include "../../core/core_pip.v"
 `include "../../../Single Cycle/src/adder.v"
 `include "../../../Single Cycle/src/alu_control.v"
 `include "../../../Single Cycle/src/alu.v"
