@@ -1,6 +1,8 @@
 <p align="left">
   <img src="https://img.shields.io/badge/Single--Cycle%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/Pipelined%20Execution-In%20Progress-yellow" />
+  <img src="https://img.shields.io/badge/Pipelined%20Execution-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/Synthesis-In%20Progress-yellow" />
+  <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending-grey" />
 </p>
 
 # RISCV-32I-Processor
@@ -18,8 +20,8 @@ The main branch contains fully functional and tested source files along with the
 
 ## Current Status
 
-- Single Cycle core is stable and capable of running basic instructions and simple programs.
-- Pipelined core is under active development and testing.
+- The single-cycle core is stable and capable of running basic instructions and simple programs.  
+- The pipelined core is also stable and can execute basic instructions and simple programs, but further development is needed to add modules that enhance its ability to handle more complex tasks.
 - Test benches cover basic instruction tests and are being expanded for more complex scenarios.
 
 ## Usage
