@@ -30,14 +30,55 @@ To design and implement a five-stage pipelined CPU architecture capable of execu
 ```
 PipelineExecution/
 ├── core/
-│ └── core_pip.v # Top-level pipelined RV32I core
-├── stages/ # Individual pipeline stage modules (IF, ID, EX, MEM, WB)
+│   └── core_pip.v                  # Top-level pipelined RV32I core
+│
+├── stages/                         # Pipeline stage logic only (no shared modules here)
+│   ├── fetch.v                     # IF stage
+│   ├── if_id_reg.v                 # IF/ID pipeline register
+│   ├── decode.v                    # ID stage (interfaces with shared regfile, control, imm)
+│   ├── id_ex_reg.v                 # ID/EX pipeline register
+│   ├── execute.v                   # EX stage (ALU interface, branch, forwarding)
+│   ├── ex_mem_reg.v                # EX/MEM pipeline register
+│   ├── memory.v                    # MEM stage
+│   ├── mem_wb_reg.v                # MEM/WB pipeline register
+│   ├── hazard_unit.v               # Load–use hazard detection
+│   └── forwarding_unit.v           # Forwarding/bypass logic
+│
 ├── tb/
-│ ├── stages_tb/ # Testbenches for individual stage modules
-│ └── tb_1/ # First integrated testbench for the pipelined core
-└── synth/ # Folder for synthesis using Yosys with Yosys script and synthesis SVG output
+│   ├── stages_tb/                  # Testbenches for individual pipeline stages/hazard/forwarding
+│   └── tb_1/                       # Integrated testbench for full pipelined core
+│
+├── synth/
+│   ├── synth_core_pip.ys           # Synthesis script (run from inside synth/)
+│   ├── show_core_pip.ys            # Schematic (SVG) generation script
+│   ├── core_pip_synth.v            # Synthesized netlist (generated)
+│   ├── core_pip.svg                # Block-level schematic of the pipelined core (generated)
+│   └── synth_core_pip.log          # Synthesis log (generated)
+│
+└── NOTE Shared Modules             # external modules reused from Single-Cycle design.
 
 ```
+## Shared Modules
+
+The pipelined processor reuses several fundamental RTL modules from the Single-Cycle design.
+These include:
+
+- ALU  
+- ALU Control  
+- Register File  
+- Control Unit  
+- Immediate Generator  
+- Program Counter  
+- Branch Unit  
+- Instruction Memory  
+- Multiplexers  
+- Adders  
+
+These modules are not duplicated inside the PipleineExecution directory.  
+Instead, the pipelined `core_pip.v` and the stage files reference them from the **Single Cycle** project directory.
+
+This avoids code duplication and ensures that both the single-cycle and pipelined implementations stay consistent and share the same foundational components.
+
 ## Future Work
 - Implement branch detection and prediction module to resolve control hazards and reduce pipeline stalls
 - Perform comprehensive RISC-V instruction set verification using standard test suites
@@ -45,3 +86,7 @@ PipelineExecution/
 
 ## Contribution
 Suggestions for design improvements, verification strategies, or additional test programs are welcome.
+
+
+## License
+Open for educational and personal use under the [MIT License](../License.txt)
