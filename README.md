@@ -18,11 +18,32 @@ This repository implements the RISC-V 32I subset processor core in Verilog. It i
 
 The main branch contains fully functional and tested source files along with their corresponding testbenches. It serves as the central, most up-to-date snapshot of the project.
 
+### Shared Architecture Components
+
+To maintain a clean architecture and avoid duplicating RTL code, the pipelined core directly imports and uses many modules from the Single Cycle implementation.  
+These include:
+
+- ALU  
+- ALU Control  
+- Register File  
+- Control Unit  
+- Immediate Generator  
+- Program Counter  
+- Branch Unit  
+- MUX modules  
+- Adders  
+- Instruction Memory  
+
+Only pipeline–specific elements (stage logic, pipeline registers, hazard detection, forwarding paths) are implemented inside the Pipeline folder.  
+This approach ensures both cores remain synchronized in functional behavior while reducing maintenance effort.
+
+
 ## Current Status
 
 - The single-cycle core is stable and capable of running basic instructions and simple programs.  
 - The pipelined core is also stable and can execute basic instructions and simple programs, but further development is needed to add modules that enhance its ability to handle more complex tasks.
 - Test benches cover basic instruction tests and are being expanded for more complex scenarios.
+
 
 ## Usage
 
