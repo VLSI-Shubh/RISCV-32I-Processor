@@ -34,7 +34,7 @@ These include:
 - Adders  
 - Instruction Memory  
 
-Only pipeline–specific elements (stage logic, pipeline registers, hazard detection, forwarding paths) are implemented inside the Pipeline folder.  
+Only pipeline specific elements (stage logic, pipeline registers, hazard detection, forwarding paths) are implemented inside the Pipeline folder.  
 This approach ensures both cores remain synchronized in functional behavior while reducing maintenance effort.
 
 
