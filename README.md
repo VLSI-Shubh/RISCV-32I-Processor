@@ -1,7 +1,8 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/Single--Cycle%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/Pipelined%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/Synthesis-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/Single%20Cycle%20Execution-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/5%20stage%20Pipelined%20Execution-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/Single%20Cycle%20Synthesis-Pending- orange" />
+  <img src="https://img.shields.io/badge/5%20stage%20Pipelined%20Synthesis-Completed-brightgreen" />
   <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending- orange" />
 </p>
 
