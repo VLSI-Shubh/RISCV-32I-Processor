@@ -1,10 +1,13 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/Single%20Cycle%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/5%20stage%20Pipelined%20Execution-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/Single%20Cycle%20Synthesis-Pending- orange" />
-  <img src="https://img.shields.io/badge/5%20stage%20Pipelined%20Synthesis-Completed-brightgreen" />
-  <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending- orange" />
+  <img src="https://img.shields.io/badge/Single%20Cycle%20Execution%20RTL%20Design-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/Single%20Cycle%20Functional%20Verification-Passed-brightgreen" />
+  <img src="https://img.shields.io/badge/Single%20Cycle%20Synthesis-In%20Progress-yellow" />
+  <img src="https://img.shields.io/badge/5%20Stage%20Pipeline%20Execution%20RTL%20Design-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/5%20Stage%20Pipeline%20Functional%20Verification-Passed-brightgreen" />
+  <img src="https://img.shields.io/badge/5%20Stage%20Pipeline%20Synthesis-Completed-brightgreen" />
+  <img src="https://img.shields.io/badge/FPGA%20Implementation-Pending-orange" />
 </p>
+
 
 # RISCV-32I-Processor
 
@@ -42,7 +45,7 @@ This approach ensures both cores remain synchronized in functional behavior whil
 ## Current Status
 
 - The single-cycle core is stable and capable of running basic instructions and simple programs.  
-- The pipelined core is also stable and can execute basic instructions and simple programs, but further development is needed to add modules that enhance its ability to handle more complex tasks.
+- The pipelined core is stable and executes basic RV32I instructions/programs, but requires enhancements like branch prediction and MUL/DIV (M extension) for complex workloads.
 - Test benches cover basic instruction tests and are being expanded for more complex scenarios.
 
 
