@@ -89,4 +89,4 @@ Suggestions for design improvements, verification strategies, or additional test
 
 
 ## License
-Open for educational and personal use under the [MIT License](../License.txt)
+Open for educational and personal uses under the [MIT License](../License.txt)
